@@ -1,0 +1,16 @@
+name: GitHub CLI Workflow
+
+on:
+  push:
+
+jobs:
+  github-cli:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Execute GitHub CLI Command
+        run: gh repo list akshu20791
+        env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
